@@ -31,120 +31,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Navigation */}
-      <header className="border-b sticky top-0 bg-background z-10">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Bot className="h-6 w-6 text-primary" />
-            <span className="font-bold text-xl">Chatbot Builder</span>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-
-          {/* Desktop menu */}
-          <div className="hidden lg:flex items-center gap-6">
-            <a
-              href="#features"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Pricing
-            </a>
-            <a
-              href="#testimonials"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Testimonials
-            </a>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-4">
-            {isAuthenticated ? (
-              <Button onClick={() => navigate("/dashboard")}>Dashboard</Button>
-            ) : (
-              <>
-                <Button variant="ghost" onClick={() => navigate("/login")}>
-                  Log in
-                </Button>
-                <Button onClick={() => navigate("/signup")}>Sign up</Button>
-              </>
-            )}
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden border-t">
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              <a href="#features" className="py-2" onClick={toggleMenu}>
-                Features
-              </a>
-              <a href="#pricing" className="py-2" onClick={toggleMenu}>
-                Pricing
-              </a>
-              <a href="#testimonials" className="py-2" onClick={toggleMenu}>
-                Testimonials
-              </a>
-              <div className="flex flex-col gap-2 pt-4 border-t">
-                {isAuthenticated ? (
-                  <Button onClick={() => navigate("/dashboard")}>
-                    Dashboard
-                  </Button>
-                ) : (
-                  <>
-                    <Button
-                      variant="outline"
-                      onClick={() => navigate("/login")}
-                    >
-                      Log in
-                    </Button>
-                    <Button onClick={() => navigate("/signup")}>Sign up</Button>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-      </header>
-
-      <main className="flex-grow">
+    <div className="min-h-screen flex flex-col bg-[rgba(74,74,74,1)]">
+      <main className="flex-grow bg-[rgba(34,34,34,1)]">
         {/* Hero Section */}
-        <section className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="bg-[rgba(34,34,34,1)]">
+          <div className="container mx-auto px-4 text-center bg-[rgba(34,34,34,1)]">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Build AI Chatbots <br className="hidden md:block" />
               Without Code
@@ -153,7 +44,7 @@ const Index = () => {
               Create, customize, and deploy AI-powered chatbots for your website
               or app in minutes, not months.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 bg-[rgba(34,34,34,1)]">
               <Button
                 size="lg"
                 onClick={handleGetStarted}
@@ -172,7 +63,7 @@ const Index = () => {
               </Button>
             </div>
 
-            <div className="relative mx-auto max-w-4xl rounded-lg shadow-2xl border overflow-hidden">
+            <div className="relative mx-auto max-w-4xl rounded-lg shadow-2xl border overflow-hidden bg-[rgba(34,34,34,1)]">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 pointer-events-none"></div>
               <img
                 src="/placeholder.svg"
@@ -187,7 +78,7 @@ const Index = () => {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 bg-slate-50">
+        <section id="features" className="py-20 bg-[rgba(34,34,34,1)]">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">Powerful Features</h2>
@@ -248,7 +139,7 @@ const Index = () => {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="py-20">
+        <section id="pricing" className="py-20 bg-[rgba(34,34,34,1)]">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">
@@ -375,7 +266,7 @@ const Index = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 bg-slate-50">
+        <section id="testimonials" className="py-20 bg-[rgba(34,34,34,1)]">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4">
