@@ -101,21 +101,21 @@ const [contactError, setContactError] = useState('');
         desc: 'Test the power of Embagent. Create your own custom-trained AI agent and see how it can transform your interactions.\n\n This is a version in testing and may not be fully functional.',
         icon: '/icons/code.png',
         button: '/icons/create.png',
-        modal: 'create',
+        modal: 'create' as 'create' | 'join' | 'contact',
       },
       {
         title: 'Join the Community',
         desc: "Get on our email list to stay updated on the latest features, improvements, and new releases. You'll get early access to new features and be part of our growing community.",
         icon: '/icons/users.png',
         button: '/icons/join.png',
-        modal: 'join',
+        modal: 'join' as 'create' | 'join' | 'contact',
       },
       {
         title: 'Support Us',
         desc: 'Interested in joining the team or investment opportunities? We are looking for talented individuals and partners to help us grow and improve EmbAgent.',
         icon: '/icons/heart.png',
         button: '/icons/contact.png',
-        modal: 'contact',
+        modal: 'contact' as 'create' | 'join' | 'contact',
       },
     ].map((item, i) => (
       <div
