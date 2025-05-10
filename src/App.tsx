@@ -1,6 +1,22 @@
-import './App.css'
+import './App.css';
 import { useState } from 'react';
+import './index.css';
 import Modal from './components/Modal';
+
+// Icon imports (for Vite to handle them correctly)
+import detectiveIcon from './assets/icons/detective.png';
+import goButtonIcon from './assets/icons/go-button.png';
+import robotIcon from './assets/icons/robot-support.png';
+import fileIcon from './assets/icons/file.png';
+import menuIcon from './assets/icons/menu.png';
+import lockIcon from './assets/icons/lock.png';
+// import codeIcon from './assets/icons/code.png';
+import createIcon from './assets/icons/create.png';
+import joinIcon from './assets/icons/join.png';
+// import heartIcon from './assets/icons/heart.png';
+import contactIcon from './assets/icons/contact.png';
+// import usersIcon from './assets/icons/users.png';
+import comingSoonIcon from './assets/icons/coming-soon.png';
 function App() {
   const [activeModal, setActiveModal] = useState<null | 'create' | 'join' | 'contact'>(null);
   const [email, setEmail] = useState('');
@@ -19,21 +35,21 @@ const [contactError, setContactError] = useState('');
     <main className="bg-[#222222] text-white min-h-screen w-full font-sans overflow-x-hidden">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center h-screen px-4">
-        <img
-          src="/icons/detective.png"
-          alt="EMBAGENT logo"
-          className="w-70 mb-8"
-        />
+      <img
+        src={detectiveIcon}
+        alt="EMBAGENT logo"
+        className="w-70 mb-8"
+      />
         <h1 className="font-anton font-bold uppercase tracking-wide text-6xl">
           EMBAGENT
         </h1>
         <p className="text-lg text-gray-300">Your custom-trained AI agent.<br />Built for You.</p>
         <button onClick={() => console.log('Clicked!')}>
-          <img
-            src="/icons/go-button.png"
-            alt="Build My Agent"
-            className="mt-8 w-30 md:w-30 hover:scale-105 transition-transform duration-300"
-          />
+        <img
+          src={goButtonIcon}
+          alt="Build My Agent"
+          className="mt-8 w-30 md:w-30 hover:scale-105 transition-transform duration-300"
+        />
         </button>
       </section>
       {/* Features Section */}
@@ -44,22 +60,22 @@ const [contactError, setContactError] = useState('');
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               {
-                icon: '/icons/robot-support.png',
+                icon: robotIcon,
                 title: 'Natural Conversations',
                 desc: 'Upload files, documents, or enter text to define exactly what your agent should know. Make it an expert in your product, service, or anything else you choose.',
               },
               {
-                icon: '/icons/file.png',
+                icon:fileIcon,
                 title: 'Customize Your Agent',
                 desc: 'Upload files, documents, or enter text to define exactly what your agent should know. Make it an expert in your product, service, or anything else you choose.',
               },
               {
-                icon: '/icons/menu.png',
+                icon: menuIcon,
                 title: 'Embeddable Widget',
                 desc: 'AI-powered responses that feel natural and human-like, creating engaging user experiences.',
               },
               {
-                icon: '/icons/lock.png',
+                icon: lockIcon,
                 title: 'Data Security',
                 desc: 'Data privacy is a priority. Embagent doesn’t store sensitive information and follows best practices to keep your user interactions safe.',
               },
@@ -71,10 +87,10 @@ const [contactError, setContactError] = useState('');
   >
     <div className="flex flex-col h-full">
     <img
-  src={feature.icon}
-  alt={feature.title}
-  className="w-12 h-12 mb-6 mx-auto"
-/>
+      src={feature.icon}
+      alt={feature.title}
+      className="w-12 h-12 mb-6 mx-auto"
+    />
 <h3 className="text-l font-anton font-bold tracking-tight text-center mb-4">
   {feature.title}
 </h3>
@@ -99,22 +115,22 @@ const [contactError, setContactError] = useState('');
       {
         title: 'Try EmbAgent',
         desc: 'Test the power of Embagent. Create your own custom-trained AI agent and see how it can transform your interactions.\n\n This is a version in testing and may not be fully functional.',
-        icon: '/icons/code.png',
-        button: '/icons/create.png',
+        icon: './assets/icons/code.png',
+        button: createIcon,
         modal: 'create' as 'create' | 'join' | 'contact',
       },
       {
         title: 'Join the Community',
         desc: "Get on our email list to stay updated on the latest features, improvements, and new releases. You'll get early access to new features and be part of our growing community.",
-        icon: '/icons/users.png',
-        button: '/icons/join.png',
+        icon: './assets/icons/users.png',
+        button: joinIcon,
         modal: 'join' as 'create' | 'join' | 'contact',
       },
       {
         title: 'Support Us',
         desc: 'Interested in joining the team or investment opportunities? We are looking for talented individuals and partners to help us grow and improve EmbAgent.',
-        icon: '/icons/heart.png',
-        button: '/icons/contact.png',
+        icon: './assets/icons/heart.png',
+        button: contactIcon,
         modal: 'contact' as 'create' | 'join' | 'contact',
       },
     ].map((item, i) => (
@@ -146,11 +162,11 @@ const [contactError, setContactError] = useState('');
 {/*------------------------------ TESTING MODAL ------------------------------ */}
 
 <Modal isOpen={activeModal === 'create'} onClose={() => setActiveModal(null)}>
-  <img
-    src="/icons/coming-soon.png"
-    alt="Agent Preview"
-    className="w-full h-auto rounded-lg"
-  />
+<img
+  src={comingSoonIcon}
+  alt="Agent Preview"
+  className="w-full h-auto rounded-lg"
+/>
 </Modal>
 
 {/*------------------------------ MAILING LIST MODAL ------------------------------ */}
